@@ -1,25 +1,23 @@
+<% if @article.errors.any? %>
+ 
+  <h2> The follwoing errors prevented the article  from beign saved. </h2>
+  <ul>
+   <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg%></li>
+     <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div> 
-   <%= form.label :title %>
+  <p> 
+   <%= form.label :title %> <br/>
    <%= form.text_field :title %>
-  </div>
-  <div> 
-   <%= form.label :description %>
-   <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
+  </p>
+  <p> 
+   <%= form.label :description %> <br/>
+   <%= form.text_area :description %>
+  </p>
+  <p>
     <%= form.submit %>
-  </div>
+  </p>
 <% end %>
