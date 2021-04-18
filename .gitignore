@@ -35,6 +35,9 @@
 #Ignore database.yml
 /config/database.yml
 
+
+/.DS_Store
+
 /public/packs
 /public/packs-test
 /node_modules
